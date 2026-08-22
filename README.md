@@ -17,9 +17,16 @@ Les logements sociaux rachetés déjà existants ("acquisition-conventionnement"
 Fichier "Logements sociaux financés à Paris" — Open Data Paris (https://opendata.paris.fr).
 4 174 programmes de logement social, 126 547 logements au total, de 2001 à 2024.
 
+Récupéré via l'API Explore 2.1 de la Ville de Paris (`src/api.py`), plutôt qu'en téléchargement manuel :
+
+```python
+from src.api import download_dataset
+df = download_dataset()  # télécharge et sauvegarde dans data/raw/
+```
+
 ## Comment le projet est organisé
 
-\`\`\`
+```
 data/
   raw/          → le fichier téléchargé, tel quel
   processed/    → le fichier après nettoyage (produit par 02)
@@ -27,18 +34,23 @@ notebooks/
   01_data_understanding.ipynb   → exploration des données, recherche d'anomalies
   02_data_cleaning.ipynb        → nettoyage, à partir des décisions prises en 01
   03_analysis.ipynb             → calculs, graphiques, et conclusion finale
+src/
+  api.py        → récupération du dataset via l'API Open Data Paris
 outputs/        → tous les graphiques générés (images .png)
-\`\`\`
+```
 
 ## Comment relancer le projet
 
-Ouvrir et exécuter les notebooks **dans l'ordre** : `01` → `02` → `03`. Chaque notebook charge le fichier produit par le précédent.
+1. Récupérer les données : exécuter `src/api.py` (ou utiliser `download_dataset()`), ou utiliser directement le fichier déjà présent dans `data/raw/`.
+2. Ouvrir et exécuter les notebooks **dans l'ordre** : `01` → `02` → `03`. Chaque notebook charge le fichier produit par le précédent.
 
-Packages nécessaires : `pandas`, `numpy`, `matplotlib`, `statsmodels`.
+*(Les notebooks chargent directement le fichier CSV présent dans `data/raw/` — `src/api.py` sert à le récupérer ou l'actualiser depuis la source, mais n'est pas appelé automatiquement par les notebooks.)*
 
-\`\`\`
-pip install pandas numpy matplotlib statsmodels
-\`\`\`
+Packages nécessaires : `pandas`, `numpy`, `matplotlib`, `statsmodels`, `requests`.
+
+```
+pip install pandas numpy matplotlib statsmodels requests
+```
 
 ## Les 3 décisions méthodologiques clés
 
@@ -51,7 +63,8 @@ pip install pandas numpy matplotlib statsmodels
 3. **Est-ce que le mode de réalisation cause la différence ?**
    Non : l'analyse montre une association statistique solide, pas un lien de cause à effet. D'autres facteurs (contexte foncier, politique locale) peuvent expliquer une partie de l'écart — voir la section "Limites" du notebook 03.
 
-## Ce que contient le rendu
+## Ce que contient ce dépôt
 
 - **`notebooks/01, 02, 03`** — tout le travail d'analyse : exploration, nettoyage, puis calculs et graphiques. Chaque étape est expliquée en markdown avant le code.
+- **`src/api.py`** — récupération du dataset via l'API Open Data Paris.
 - **`outputs/`** — tous les graphiques générés, en image.
