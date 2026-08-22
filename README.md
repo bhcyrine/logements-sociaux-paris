@@ -4,9 +4,14 @@
 
 Est-ce que la façon dont un logement social est produit (construit neuf, rénové, ou racheté déjà existant) change le type de logement qu'on obtient au final ?
 
+
 ## L'hypothèse
 
-Les logements sociaux rachetés déjà existants ("acquisition-conventionnement") contiennent moins de logements très sociaux (PLA I, réservés aux ménages les plus modestes) que les logements construits neufs ou rénovés — et à la place, on y trouve plus de logements PLS (intermédiaires, pour des revenus plus élevés).
+Le mode de réalisation d'un programme de logement social détermine sa composition 
+en types de financement. En particulier, l'acquisition-conventionnement (rachat de 
+logements existants) produit une proportion de logements très sociaux (PLA I) 
+nettement plus faible que la construction neuve ou l'acquisition-réhabilitation, 
+au profit des logements PLS (intermédiaires).
 
 ## Le résultat, en une phrase
 
