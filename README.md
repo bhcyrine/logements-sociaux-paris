@@ -71,5 +71,5 @@ pip install pandas numpy matplotlib statsmodels requests
 ## Ce que contient ce dépôt
 
 - **`notebooks/01, 02, 03`** - tout le travail d'analyse : exploration, nettoyage, puis calculs et graphiques. Chaque étape est expliquée en markdown avant le code.
-- **`src/api.py`** — récupération du dataset via l'API Open Data Paris.
-- **`outputs/`** — tous les graphiques générés, en image.
+- **`src/api.py`** - récupération du dataset via l'API Open Data Paris.
+- **`outputs/`** - tous les graphiques générés, en image.
